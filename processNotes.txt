@@ -16,7 +16,7 @@ be a bit different from local database REST applications.
 Process Workflow Summary
 ========================
 Phase 1: Project Setup
-
+Phase 2: Create basic server
 
 
 
@@ -34,3 +34,21 @@ Phase 1: Project Setup
         5. npm install mongoose morgan uuid      -- install initial dependencies
     // Create server.
         6. server.js                             -- create your server file.
+
+
+
+
+Phase 2: Create basic server
+============================
+    1. Create express app
+        ------------------------------------------------
+            const express = require('express');
+            const app = express();
+        ------------------------------------------------
+    2. Create basic server
+        --------------------------------------------------------------
+            let server;
+            server = app.listen('3000', function() {
+                console.log('Your app is listening on port 3000...');
+            });
+        -------------------------------------------------------------
