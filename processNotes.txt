@@ -17,7 +17,7 @@ Process Workflow Summary
 ========================
 Phase 1: Project Setup
 Phase 2: Create basic server
-
+Phase 3: Setup database and server connection
 
 
 
@@ -52,3 +52,18 @@ Phase 2: Create basic server
                 console.log('Your app is listening on port 3000...');
             });
         -------------------------------------------------------------
+    3. Create basic GET route to test connection:
+        -------------------------------------------------------------
+        app.get('/', function(req, res) {
+            res.send('This test works!');
+        });
+        -------------------------------------------------------------
+        * To test connection, simply go to your browser and go to
+          localhost:3000 and you shoudl see "This test works!".
+
+
+
+
+
+Phase 3: Setup database and server connection
+=============================================
