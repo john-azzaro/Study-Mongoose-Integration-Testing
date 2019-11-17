@@ -2,3 +2,27 @@ Mongoose Integration Testing Process Notes:
 ===========================================
 
 
+
+
+Objective
+=========
+The objective of this study is to examine how we we can integrate integration testing into 
+a basic restaurant app. Because this study now uses a database, the testing startegy will 
+be a bit different from local database REST applications.
+
+
+
+
+Process Workflow Summary
+========================
+Phase 1: Project Setup
+
+
+
+
+
+Phase 1: Project Setup
+======================
+    // Project Setup
+        1. Create Project folder                 -- The project folder will hold all the files for the project.
+        2. npm init                              -- Create a package.json file to hold
