@@ -30,3 +30,5 @@ Phase 1: Project Setup
         3. npm install express                   -- install express.
     // Add .gitignore file
         4. .gitignore > node_modules             -- add gitignore and add node_modules for version control.
+    // Add intial dependencies
+        5. npm install mongoose morgan uuid      -- install initial dependencies
