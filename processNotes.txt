@@ -25,4 +25,8 @@ Phase 1: Project Setup
 ======================
     // Project Setup
         1. Create Project folder                 -- The project folder will hold all the files for the project.
-        2. npm init                              -- Create a package.json file to hold
+        2. npm init                              -- Create a package.json file.
+    // Install Expres
+        3. npm install express                   -- install express.
+    // Add .gitignore file
+        4. .gitignore > node_modules             -- add gitignore and add node_modules for version control.
