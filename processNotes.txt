@@ -32,3 +32,5 @@ Phase 1: Project Setup
         4. .gitignore > node_modules             -- add gitignore and add node_modules for version control.
     // Add intial dependencies
         5. npm install mongoose morgan uuid      -- install initial dependencies
+    // Create server.
+        6. server.js                             -- create your server file.
