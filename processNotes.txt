@@ -54,9 +54,9 @@ Phase 2: Create basic server
         -------------------------------------------------------------
     3. Create basic GET route to test connection:
         -------------------------------------------------------------
-        app.get('/', function(req, res) {
-            res.send('This test works!');
-        });
+            app.get('/', function(req, res) {
+                res.send('This test works!');
+            });
         -------------------------------------------------------------
         * To test connection, simply go to your browser and go to
           localhost:3000 and you shoudl see "This test works!".
