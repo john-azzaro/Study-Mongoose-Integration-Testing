@@ -107,3 +107,25 @@ Phase 3: Setup database and server connection
                 });
             }           
         ---------------------------------------------------------------------------------------
+    6. Add closeServer function:
+        -----------------------------------------------------------------------------------------------------------
+            7. Add closeServer function:
+        ---------------------------------------------------------------------------------------------------------------
+            function closeServer() {                                                                                       // To close server:
+                return mongoose.disconnect().then(function() {                                                                  // disconnect and then...
+                    return new Promise(function(resolve, reject) {                                                              // return a promise which...
+                        console.log("Closing server");                                                                     // ... will log "closing server"...
+                        server.close(function(err) {                                                                              // and close the server...
+                    if (err) {                                                                                             // and if there is an error, reject...
+                    return reject(err);                                  
+                    }
+                    resolve();                                                                                             // else resolve.
+                });
+                });
+            });
+            }
+        -----------------------------------------------------------------------------------------------------------
+    7. And incase server.js is called directly:
+        ----------------------------------------------------------------------------------
+        
+        ----------------------------------------------------------------------------------
