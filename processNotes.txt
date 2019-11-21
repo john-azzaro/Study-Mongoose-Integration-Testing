@@ -40,12 +40,12 @@ Phase 1: Project Setup
 
 Phase 2: Create basic server
 ============================
-    1. Create express app
+    1. Create express app:
         ------------------------------------------------
             const express = require('express');
             const app = express();
         ------------------------------------------------
-    2. Create basic server
+    2. Create basic server:
         --------------------------------------------------------------
             let server;
             server = app.listen('3000', function() {
@@ -70,19 +70,40 @@ Phase 3: Setup database and server connection
     0. Create or import database:
         * In the case of this study, we're going to use a restaurants-app database specifically imported for this project.
 
-    1. Import mongoose
+    1. Import mongoose:
         ----------------------------------------------
             const mongoose = require('mongoose');
         ----------------------------------------------
-    2. Configure mongoose to use ES6 promises
+    2. Configure mongoose to use ES6 promises:
         -----------------------------------------------
             mongoose.Promise = global.Promise;
         -----------------------------------------------
-    3. Create config file
+    3. Create config file:
         -----------------------------
             config
         -----------------------------
     4. Create and Export database and Port:
         ------------------------------------------------------------------------------------
-        
+            const {DATABASE_URL, PORT} = require('./config.js');
         ------------------------------------------------------------------------------------
+    5. Add runServer function:
+        ---------------------------------------------------------------------------------------
+            function runServer(databaseUrl, port=PORT) {                                                                  // To Run server: 
+                return new Promise( function(resolve, reject) {                                                           // return Promise in which...
+                    mongoose.connect(databaseUrl, { useNewUrlParser: true,  useUnifiedTopology: true }, function() {      // Mongoose connects to database:
+                        if (err) {                                                                                        // If there is an error... 
+                            return reject(err);                                                                           // ... return reject.
+                        }       
+
+                        server = app.listen(port, function() {                                                            // Listen for connection to configured port.  
+                            console.log(`Listening on port ${port}...`);                                                  // ... and log connection in terminal.
+                            resolve();                                                                                    // and then the promise is resolved!
+                        })
+                        .on('error', function() {                                                                         // But if there is an error...
+                            mongoose.disconnect();                                                                        // ... disconnect from mongoose...
+                            reject(err);                                                                                  // and reject (passing in an error object).
+                        });
+                    });
+                });
+            }           
+        ---------------------------------------------------------------------------------------
