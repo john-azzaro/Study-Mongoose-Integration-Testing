@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 
-// Module Imports
+// Module Imports (from config.js)
 const {DATABASE_URL, PORT} = require('./config.js');
 
 
@@ -15,7 +15,6 @@ const app = express();
 
 
 // Server
-
 let server;
 
 function runServer(databaseUrl, port = PORT) {

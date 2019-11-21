@@ -80,7 +80,7 @@ Phase 3: Setup database and server connection
         -----------------------------------------------
     3. Create config file:
         -----------------------------
-            config
+            config                          -- config.js is where constants are controlled for the entire app
         -----------------------------
     4. Create and Export database and Port:
         ------------------------------------------------------------------------------------
