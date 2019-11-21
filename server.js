@@ -10,7 +10,7 @@ mongoose.Promise = global.Promise;
 const {DATABASE_URL, PORT} = require('./config.js');
 
 
-// Instantiation
+// Initialize app
 const app = express();
 
 
