@@ -127,5 +127,9 @@ Phase 3: Setup database and server connection
         -----------------------------------------------------------------------------------------------------------
     7. And incase server.js is called directly:
         ----------------------------------------------------------------------------------
-        
+            if (require.main === module) { 
+                runServer(DATABASE_URL).catch(function(err) {
+                    console.error(err));
+                }
+            }        
         ----------------------------------------------------------------------------------
