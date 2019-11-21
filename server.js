@@ -1,14 +1,16 @@
 'use strict';
 
+// Imports
 const express = require('express');
 
+// Instantiation
 const app = express();
 
 
-app.get('/', function(req, res) {
-    res.send('this app works!');
-});
 
+
+
+// Server
 
 let server;
 

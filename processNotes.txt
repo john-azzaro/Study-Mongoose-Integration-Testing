@@ -66,4 +66,8 @@ Phase 2: Create basic server
 
 
 Phase 3: Setup database and server connection
-=============================================
+==============================================
+    0. Create or import database:
+        * In the case of this study, we're going to use a restaurants-app database specifically imported for this project.
+
+    1. 
