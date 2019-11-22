@@ -23,6 +23,10 @@ const restaurantSchema = mongoose.Schema({
   ]
 });
 
+restaurantSchema.virtual('addressString').get(function() {
+  return `${this.address.building} ${this.address.street}`.trim();
+});
+
 const Restaurant = mongoose.model("Restaurant", restaurantSchema);
 
 module.exports = { Restaurant }
