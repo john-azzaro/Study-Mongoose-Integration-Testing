@@ -158,20 +158,20 @@ Phase 4: Add initial middleware
 Phase 5: Create a mongoose schema and model (including virtuals and instance methods if needed):
 ================================================================================================
     1. Create a models file:
-        ----------------------------
+        ---------------------------- 
             models.js
         ----------------------------
     2. Reference mongoose:
         -----------------------------------------
-            const mongoose = require('mongoose');
+            const mongoose = require('mongoose');                       -- Load mongoose
         -----------------------------------------
     3. Configure mongoose to use ES6 promises:
         -------------------------------------------
-            mongoose.Promise = global.Promise;
+            mongoose.Promise = global.Promise;                          -- Enable mongoose to use ES6 Promises
         -------------------------------------------
     4. Define schema:
         -------------------------------------------------------
-            const restaurantSchema = mongoose.Schema({
+            const restaurantSchema = mongoose.Schema({                  -- Schema of a restaurant entry
                 name: { type: String, required: true },
                 borough: { type: String, required: true },
                 cuisine: { type: String, required: true },
@@ -192,5 +192,13 @@ Phase 5: Create a mongoose schema and model (including virtuals and instance met
         -------------------------------------------------------
     5. Create a model for your schema:
         ------------------------------------------------------------------------------
-            const Restaurant = mongoose.model("Restaurant", restaurantSchema);
+            const Restaurant = mongoose.model("Restaurant", restaurantSchema);                 -- model for restaurantSchema
         ------------------------------------------------------------------------------
+    6. Export the model for use in server.js:
+        ----------------------------------------------------------------------
+            module.exports = { Restaurant };                                                   -- What will be exported from this module for use elsewhere in the code.
+        ----------------------------------------------------------------------
+    7. Import the models to your server.js file:
+        -------------------------------------------------------------
+            const { Restaurant} = require('./models.js')
+        -------------------------------------------------------------

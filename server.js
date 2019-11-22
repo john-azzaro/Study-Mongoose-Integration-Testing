@@ -9,6 +9,7 @@ mongoose.Promise = global.Promise;
 
 // Module Imports (from config.js)
 const {DATABASE_URL, PORT} = require('./config.js');
+const { Restaurant } = require("./models.js")
 
 
 // Initialize app
