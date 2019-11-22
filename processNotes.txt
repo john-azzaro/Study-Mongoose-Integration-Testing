@@ -150,3 +150,10 @@ Phase 4: Add initial middleware
 
             app.use(morgan('common'));
         -------------------------------------------------------
+
+
+
+
+
+Phase 5: Create a mongoose schema and model (including virtuals and instance methods if needed):
+================================================================================================
