@@ -140,4 +140,13 @@ Phase 3: Setup database and server connection
 
 Phase 4: Add initial middleware
 ===============================
-    1. 
+    1. Install initial built-in middleware
+        -------------------------------------------------
+            app.use(express.json);                              -- express.json allows the server to accept incoming requests as a JSON body rather than GET, POST, etc.
+        -------------------------------------------------
+    2. Install initial third-party middleware
+        -------------------------------------------------------
+            const morgan = require('morgan')
+
+            app.use(morgan('common'));
+        -------------------------------------------------------
