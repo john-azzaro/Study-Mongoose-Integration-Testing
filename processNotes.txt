@@ -215,13 +215,35 @@ Phase 5: Create a mongoose schema and model (including virtuals and instance met
 
     7. Import the models to your server.js file:
         -------------------------------------------------------------
-            const { Restaurant} = require('./models.js')
+            const { Restaurant} = require('./models.js');                         -- this imports the "Restaurant" model from models.js file.         
         -------------------------------------------------------------
 
     8. Create virtuals (if needed):
         -------------------------------------------------------------------------
-            restaurantSchema.virtual("addressString").get(function() {
-                return `${this.address.building} ${this.address.street}`.trim();
+            restaurantSchema.virtual("addressString").get(function() {                 -- this virtual creates a human readable string from a few of the restaurantSchema properties.
+                return `${this.address.building} ${this.address.street}`.trim(); 
+            });
+
+            restaurantSchema.virtual("grade").get(function() {                         -- this virtual returns the most recent graded restaurant.
+                const gradeObj =
+                    this.grades.sort((a, b) => {
+                    return b.date - a.date;
+                    })[0] || {};
+                return gradeObj.grade;
             });
         --------------------------------------------------------------------------
+
+    9. Add instance method (if needed):
+        ---------------------------------------------------------------------------
+            restaurantSchema.methods.serialize = function() {                         -- 
+                return {
+                    id: this._id,
+                    name: this.name,
+                    cuisine: this.cuisine,
+                    borough: this.borough,
+                    grade: this.grade,
+                    address: this.addressString
+                };
+            };       
+        ---------------------------------------------------------------------------
         
