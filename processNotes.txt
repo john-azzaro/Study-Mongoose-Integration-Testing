@@ -157,3 +157,36 @@ Phase 4: Add initial middleware
 
 Phase 5: Create a mongoose schema and model (including virtuals and instance methods if needed):
 ================================================================================================
+    1. Create a models file:
+        ----------------------------
+            models.js
+        ----------------------------
+    2. Reference mongoose:
+        -----------------------------------------
+            const mongoose = require('mongoose');
+        -----------------------------------------
+    3. Configure mongoose to use ES6 promises:
+        -------------------------------------------
+            mongoose.Promise = global.Promise;
+        -------------------------------------------
+    4. Define schema:
+        -------------------------------------------------------
+            const restaurantSchema = mongoose.Schema({
+                name: { type: String, required: true },
+                borough: { type: String, required: true },
+                cuisine: { type: String, required: true },
+                address: {
+                    building: String,
+                    coord: [String],
+                    street: String,
+                    zipcode: String
+                },
+                grades: [
+                    {
+                    date: Date,
+                    grade: String,
+                    score: Number
+                    }
+                ]
+            });
+        -------------------------------------------------------
