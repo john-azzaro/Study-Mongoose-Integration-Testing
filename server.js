@@ -36,9 +36,9 @@ function runServer(databaseUrl, port = PORT) {
              });
        });
     });
- }
+}
 
- function closeServer() {
+function closeServer() {
     return mongoose.disconnect().then(function() {
        return new Promise(function(resolve, reject) {
           console.log('Closing server');
@@ -52,6 +52,6 @@ function runServer(databaseUrl, port = PORT) {
     });
  }
 
- if (require.main === module) { 
+if (require.main === module) { 
     runServer(DATABASE_URL).catch(err => console.error(err));
 }

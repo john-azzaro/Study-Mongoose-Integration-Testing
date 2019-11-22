@@ -18,6 +18,7 @@ Process Workflow Summary
 Phase 1: Project Setup
 Phase 2: Create basic server
 Phase 3: Setup database and server connection
+Phase 4: Add initial middleware
 
 
 
@@ -133,3 +134,10 @@ Phase 3: Setup database and server connection
                 }
             }        
         ----------------------------------------------------------------------------------
+
+
+
+
+Phase 4: Add initial middleware
+===============================
+    1. 
