@@ -190,3 +190,7 @@ Phase 5: Create a mongoose schema and model (including virtuals and instance met
                 ]
             });
         -------------------------------------------------------
+    5. Create a model for your schema:
+        ------------------------------------------------------------------------------
+            const Restaurant = mongoose.model("Restaurant", restaurantSchema);
+        ------------------------------------------------------------------------------
