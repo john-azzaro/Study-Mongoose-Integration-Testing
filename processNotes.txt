@@ -247,3 +247,36 @@ Phase 5: Create a mongoose schema and model (including virtuals and instance met
             };       
         ---------------------------------------------------------------------------
         
+Phase 6: Create route Scaffold:
+===============================
+    1. Create pseudo-Routes:
+        --------------------------------------------------------------
+                                                                    // GET ALL restaurants
+            app.get('/restaurants', (req, res) => {                       // for all, we want the direct path.
+
+            });
+
+                                                                    // GET One restaurants  
+            app.get('/restaurants/:id', (req, res) => {                   // to get one restaurants, we need to add the :id  parameter (represents the restaurants).
+
+            });
+
+                                                                    // CREATE restaurants                                  
+            app.post('/restaurants', (req, res) => {                      // Create a restaurants on the general route.
+
+            });
+
+                                                                    // UPDATE restaurants
+            app.put('/restaurants/:id', (req, res) => {                   // update with "patch" and the :id parameter
+
+            });
+
+                                                                    // DELETE restaurants at the /restaurants endpoint                                 
+            app.delete('restaurants/:id', (req, res) => {                 // delete with user id parameter.
+
+            });
+                                                                   // DELETE restaurants
+            app.delete(':id', (req, res) => {                      // delete with user id parameter.
+
+            });
+        --------------------------------------------------------------
