@@ -20,6 +20,37 @@ const app = express();
 app.use(express.json());
 app.use(morgan('common'));
 
+// Routes
+app.get('/restaurants', (req, res) => {
+
+});
+
+
+app.get('/restaurants/:id', (req, res) => {
+
+});
+
+
+app.post('/restaurants', (req, res) => {
+
+});
+
+
+app.put('/restaurants/:id', (req, res) => {
+
+});
+
+
+app.delete('restaurants/:id', (req, res) => {
+
+});
+
+app.delete(':id', (req, res) => {
+
+});
+
+
+
 
 // Server
 let server;
