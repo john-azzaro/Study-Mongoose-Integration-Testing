@@ -22,7 +22,19 @@ app.use(morgan('common'));
 
 // Routes
 app.get('/restaurants', (req, res) => {
-
+   Restaurant
+      .find()
+      .limit(10)  
+      .then(restaurants => {
+         res.json({
+            restaurants: restaurants.map(
+            (restaurant) => restaurant.serialize())
+         });
+      })
+      .catch(err => {
+         console.error(err);
+         res.status(500).json({ message: 'Internal server error' });
+      });
 });
 
 
