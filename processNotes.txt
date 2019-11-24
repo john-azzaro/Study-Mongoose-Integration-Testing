@@ -280,3 +280,26 @@ Phase 6: Create route Scaffold:
 
             });
         --------------------------------------------------------------
+
+
+
+
+Phase 7: Create Routes
+=======================
+    --------------------------------------------------------------------
+        app.get('/restaurants', (req, res) => {
+            Restaurant
+                .find()
+                .limit(10)                                                             // limit to 10 (because 25K + in database) 
+                .then(restaurants => {                                                 // success callback for each restaurant we get back, call serialize to only expose info we want
+                res.json({
+                    restaurants: restaurants.map(
+                    (restaurant) => restaurant.serialize())
+                });
+                })
+                .catch(err => {                                                        // If there's a en error, return error
+                console.error(err);
+                res.status(500).json({ message: 'Internal server error' });
+                });
+            });
+    --------------------------------------------------------------------
