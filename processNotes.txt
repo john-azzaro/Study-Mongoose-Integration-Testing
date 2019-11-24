@@ -286,6 +286,7 @@ Phase 6: Create route Scaffold:
 
 Phase 7: Create Routes
 =======================
+    7.1: GET 10 restaurants
     --------------------------------------------------------------------
         app.get('/restaurants', (req, res) => {
             Restaurant
@@ -303,3 +304,16 @@ Phase 7: Create Routes
                 });
             });
     --------------------------------------------------------------------
+
+    7.2: GET restaurant by ID:
+    -----------------------------------------------------------------------
+    app.get('/restaurants/:id', (req, res) => {
+        Restaurant
+            .findById(req.params.id)                                              // convenience method provided by mongoose for searching by object id
+            .then(restaurant => res.json(restaurant.serialize()))
+            .catch(err => {
+            console.error(err);
+            res.status(500).json({ message: 'Internal server error' });
+            });
+        });
+    -----------------------------------------------------------------------

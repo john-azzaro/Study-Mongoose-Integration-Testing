@@ -39,7 +39,13 @@ app.get('/restaurants', (req, res) => {
 
 
 app.get('/restaurants/:id', (req, res) => {
-
+   Restaurant
+   .findById(req.params.id)
+   .then(restaurant => res.json(restaurant.serialize()))
+   .catch(err => {
+   console.error(err);
+   res.status(500).json({ message: 'Internal server error' });
+   });
 });
 
 
