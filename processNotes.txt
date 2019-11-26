@@ -19,6 +19,11 @@ Phase 1: Project Setup
 Phase 2: Create basic server
 Phase 3: Setup database and server connection
 Phase 4: Add initial middleware
+Phase 5: Create a mongoose schema and model (including virtuals and instance methods if needed):
+Phase 6: Create route Scaffold:
+Phase 7: Create Routes
+--------
+Phase 8: Implement integration tests
 
 
 
@@ -391,3 +396,8 @@ Phase 7: Create Routes
             res.status(404).json({ message: 'Not Found' });
         });
     ----------------------------------------------------------------------------------
+
+
+
+    Phase 8: Implement integration tests
+    ====================================
