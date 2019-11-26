@@ -401,11 +401,17 @@ Phase 7: Create Routes
 
     Phase 8: Implement integration tests
     ====================================
-        1.1: Install initial devDependencies:
+        1: Install initial devDependencies:
             * chai = test expectation library that helps make asserations with functions and methods to compare
                      the output of tests with expected values.
             * chai-http = gives access to methods like chai.request whcih can be used to make arbitrary requests 
                           to a server and then make assert about the results of the request.
+            * mocha = Mocha is a testing framework
         --------------------------------------------------
-            npm install chai chai-http --save-dev
+            npm install chai chai-http mocha --save-dev
         --------------------------------------------------
+
+        2. Create a test folder:
+        ------------------------------------------
+            test
+        ------------------------------------------
